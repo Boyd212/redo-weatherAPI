@@ -1,25 +1,26 @@
-var url = "https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=" + apiKey;
+var url = "https://api.openweathermap.org/data/2.5/forcast/daily?q=${city}&cnt=5&appid=${apiKey}&units=imperial"
 var apiKey = "e2ebf5f91be9ed84ff7b3315f93cff5d";
 var main = document.getElementById('main');
 var input = document.getElementById('input');
 var city = document.getElementById('city');
 //console.log(city);
 
-var url = (city)=> `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
+var url = (city)=> `https://api.openweathermap.org/data/2.5/forcast/daily?q=${city}&cnt=5&appid=${apiKey}`;
 
 async function getWeather(city){
-    var resp = await fetch(url(city), {
-        origin: "cros" });
+    var resp = await fetch(url(city), {origin: "cors"});
     var respData = await resp.json();
+    console.log(resp);
+    console.log(respData);
     addWeather(respData);
 }
 
 function addWeather(data){
-    var temp = data.result;
+    var temp = data.respData;
     var result = document.createElement('div')
     result.classList.add('weather');
-    result.innerHTML = `<h2>${temp}°F </h2>
-        <small>${data.result}</small>`;
+    result.innerHTML = `<h2>${data.temp}°F </h2>
+        <small>${data.temp}</small>`;
 
     main.innerHTML= "";
     main.appendChild(result);
