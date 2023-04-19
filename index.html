@@ -5,19 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather.API</title>
-    <href type = "stylesheet-reset" src = "./assets/reset.cs"></href>
-    <href type = "stylesheet" src = "./assets/style.cs"></href>
+    <href type = "stylesheet-reset" src = "./assets/reset.css"></href>
+    <href type = "stylesheet" src = "./assets/style.css"></href>
 </head>
     <h1>Welcome to my Weather App!</h1>
 <body>
    <form id="city">
     <input type = "text" id = "input" placeholder = "Enter any city here">
+    <button type="submit">search</button>
    </form>
    
    <main>
     <div id = "main"></div>
    </main>
-
+   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+   <script id="test" type="application/json" src="http://myresources/stuf.json"></script>
    <script src = "script.js"></script>
 </body>
 </html>
