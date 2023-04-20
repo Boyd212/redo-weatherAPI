@@ -23,24 +23,28 @@ async function getWeather(city){
     //This is getting the forcast
     var forecastResp = await fetch(url(respData[0].lat, respData[0].lon));
     var forcastData = await forecastResp.json();
-    console.log("Thiis si the forcastData: ", forcastData)
-    console.log("This is the list:", forcastData.list)
-    console.log(forcastData.list[0].main.temp)
+    displayForcast(forcastData);
+    console.log("Thiis si the forcastData: ", forcastData);
+    console.log("This is the list:", forcastData.list);
+  
    // addWeather(respData);
 }
 //json.stringify(resp);
+//const weather = forcastData.list[0].weather;
 //json.stringify(respData);
 
-function addWeather(data){
-    var temp = data.respData;
-    var result = document.createElement('div')
-    result.classList.add('weather');
-    result.innerHTML = `<h2>${data.temp}°F </h2>
-        <small>${data.temp}</small>`;
 
-    main.innerHTML= "";
-    main.appendChild(result);
-};
+
+function displayForcast(forcastData) {
+        var forcast = forcastData.list[0].main;
+        var forcastDiv = document.getElementById("forcast"); 
+        var forcastDisp = forcast.temp;
+        var display = document.createElement("h2");
+        display.innerHTML = `Today is  ${forcastDisp}°F <br> Tomorrow will be ${forcastData.list[8].main.temp}°F `
+        //<br> In two days it will be ${forcastData.list[16].main.temp}°F <br> In three days it will be ${forcastData.list[24].main.temp}°F <br> In four days it will be ${forcastData.list[32].main.temp}°F <br> And, in five days it will be ${forcastData.list[40].main.temp}°F`;
+        forcastDiv.appendChild(display);
+
+  };
 
 city.addEventListener('submit',(x) =>{
     x.preventDefault();

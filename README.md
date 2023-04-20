@@ -1,9 +1,11 @@
 # redo-weatherAPI
-This is a re-deployment of the Weather API Challenge.  This app is throwing an "Undefined" error when appending the current temperature to thee innerHTML.  I am stil working on resolving this issue.
+This is a re-deployment of the Weather API Challenge.  
 
-![Annotate-Image](https://user-images.githubusercontent.com/124947507/232633926-fed80936-ff77-4fca-a2bb-103301aca16f.png)
+I had many problems just getting this to work as-is, even with tutoring help.  I will keep working on it.
 
 
+
+![Alt text](../../Downloads/Weather-API%20(1).png)
 
 # resources
 StyleReset: "http://meyerweb.com/eric/tools/css/reset/"
